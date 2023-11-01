@@ -21,6 +21,7 @@ public class SpringwebfluxMongodbApplication implements CommandLineRunner {
         SpringApplication.run(SpringwebfluxMongodbApplication.class, args);
     }
 
+    /*EN ESTA CLASE CARGAMOS TODOS LOS DATOS QUE SE VAN A ALOJAR EN MONGODB*/
     private static final Logger log = LoggerFactory.getLogger(SpringwebfluxMongodbApplication.class);
 
     @Autowired
