@@ -26,19 +26,11 @@ public class ProductoController {
 
     @GetMapping({"/", "/listar", ""})
     public Mono<String> listar(Model model) {
-        Flux<Producto> listadoProductos = productoService.findAll().repeat(150);
+        Flux<Producto> listadoProductos = productoService.findAll();
         model.addAttribute("titulo", "Lista de productos");
         model.addAttribute("productos", listadoProductos);
 
         return Mono.just("listar");
     }
 
-    @GetMapping("/listar-v2")
-    public String listarMVC(Model model) {
-        List<Producto> listadoProducto = (List<Producto>) productoService.findAll().repeat(150);
-        model.addAttribute("titulo", "Lista de productos");
-        model.addAttribute("productos", listadoProducto);
-
-        return "listar";
-    }
 }
